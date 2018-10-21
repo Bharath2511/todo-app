@@ -1,4 +1,8 @@
-const MongoClient = require('mongodb').MongoClient
+//const MongoClient = require('mongodb').MongoClient
+const {MongoClient,ObjectID} = require('mongodb')
+
+var obj = new ObjectID()
+console.log(obj)
 //client gives you access to db //db gives access to read or write data
 MongoClient.connect("mongodb://localhost:27017/todoApp",(err,db)=>{
   if(err) {
@@ -19,7 +23,7 @@ MongoClient.connect("mongodb://localhost:27017/todoApp",(err,db)=>{
      name : "Bharath",
      age : 22,
      location : "Hyderabad"
- },(err,result)=>{
+ },(err,result)=>{ 
      if(err) {
          return console.log('collection not saved',err)
      }
