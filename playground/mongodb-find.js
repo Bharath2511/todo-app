@@ -6,8 +6,9 @@ MongoClient.connect("mongodb://localhost:27017/todoApp",(err,db)=>{
   if(err) {
      return console.log("unable to connect to db")
   }
+  //findbyid
   console.log('connected to mongodb')
-  db.collection('Todos').find().toArray().then((docs)=>{
+  db.collection('Todos').find({completed:false}).toArray().then((docs)=>{
     console.log(docs )
   },(err)=>{
       console.log(err)
